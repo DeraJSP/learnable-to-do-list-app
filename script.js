@@ -1,6 +1,8 @@
-const uList = document.querySelector('ul');
+const uList = document.querySelector('ol');
 const inputField = document.querySelector('input');
 const addTask = document.querySelector('button');
+const finished = document.querySelector('ul');
+const newLine = document.createElement('br');
 
 addTask.addEventListener('click', addToList);
 
@@ -22,14 +24,6 @@ function addToList() {
   editButton.textContent = 'Edit';
   uList.appendChild(task);
 
-/*
-alternatively you could use 
-
-() => {list.removeChild(listItem);});
- 
-instead of the this.parentNode code
-*/
-
   deleteButton.addEventListener('click', function() {
     const task = this.parentNode
     task.remove()
@@ -44,9 +38,25 @@ instead of the this.parentNode code
   }
 });
 
-  if (taskCheck == 'true') {
-      console.log('task checked')
+taskCheck.addEventListener('click', function(){
+  if (taskCheck.checked) {
+    const task = this.parentNode
+    task.remove();
+    finished.appendChild(task)
+    task.appendChild(taskCheck);
+    task.appendChild(taskSpan);
+    deleteButton.remove()
+    editButton.remove()
+    } else {
+      task.remove()
+      uList.appendChild(task);
+      task.appendChild(taskCheck);
+      task.appendChild(taskSpan);
+      task.appendChild(deleteButton);
+      task.appendChild(editButton);
     }
+})
+  
   
   inputField.focus();
 }
