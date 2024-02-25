@@ -12,15 +12,17 @@ function addToList() {
   const task = document.createElement('li');
   const taskSpan = document.createElement('span');
   taskSpan.className = 'taskText';
-  const deleteTask = document.createElement('i');
-  const editTask = document.createElement('i');
-  editTask.className = 'fa-solid fa-pen-to-square';
-  deleteTask.className = 'fa-solid fa-trash-can';
+  const deleteTask = document.createElement('button');
+  const editTask = document.createElement('button');
   const taskCheck = document.createElement('input');
+  deleteTask.className = 'delbtn';
+  editTask.className = 'editbtn'
+  deleteTask.textContent = 'Delete';
+  editTask.textContent = 'Edit';
   taskCheck.setAttribute('type', "checkbox");
   
-  const divCheck = document.createElement('div')
-  divCheck.className = 'mod-task'
+  const divCheck = document.createElement('div');
+  divCheck.className = 'mod-task';
 
   task.appendChild(taskCheck)
   task.appendChild(taskSpan);
