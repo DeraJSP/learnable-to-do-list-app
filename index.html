@@ -4,34 +4,54 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>To-do List</title>
-	<link rel="stylesheet" href="style.css">
 	<script src="script.js" defer></script>
+	<!-- poppins font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+	<script src="https://kit.fontawesome.com/90e71a60da.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<header>
 		
 	</header>
-	<main>
-	<h1>My To-do list</h1>
+	<main class="todo-wrap">
+		<section>
+			<i class="fa-solid fa-list-check"></i>
+			<div class="title">
+				<div class="line"></div>
+				<h1>TASK <span class="list-text">LIST</span></h1>
+				<div class="line"></div>
+			</div>
 
-	    <div>
-	      <label for="item">Enter a new task:</label>
-	      <input type="text" name="item" id="item">
-	      <button>Add Task</button>
-	    </div>
+			<div class="task-form">
+		      <label for="item">Enter a new task:</label>
+		      <input type="text" name="item" id="item">
+		      <button class="add-task-btn">Add Task</button>
+		    </div>
 
-	    <ol>
+		    <div class="pending-wrap">
+		      <h2>Pending tasks</h2>
+		    </div>
 
-	    </ol>
+		    <ol>
 
-	    <div>
-	    	<h2>
-	    		Finished tasks:
-	    	</h2>
-	    	<ul class="finishedlist">
-	    		  
-	    	</ul>
-	    </div>
+		    </ol>
+		</section>
+
+		<section class="finished">
+		    <div class="finished-wrap">
+		    	<h2>Finished tasks</h2>
+		    	<ul class="finishedlist">
+		    		  
+		    	</ul>
+		    </div>
+		</section>
 	</main>
 	<footer>
 		

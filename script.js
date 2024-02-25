@@ -11,26 +11,32 @@ function addToList() {
   inputField.value = '';
   const task = document.createElement('li');
   const taskSpan = document.createElement('span');
-  const deleteButton = document.createElement('button');
-  const editButton = document.createElement('button')
+  taskSpan.className = 'taskText';
+  const deleteTask = document.createElement('i');
+  const editTask = document.createElement('i');
+  editTask.className = 'fa-solid fa-pen-to-square';
+  deleteTask.className = 'fa-solid fa-trash-can';
   const taskCheck = document.createElement('input');
   taskCheck.setAttribute('type', "checkbox");
+  
+  const divCheck = document.createElement('div')
+  divCheck.className = 'mod-task'
+
   task.appendChild(taskCheck)
   task.appendChild(taskSpan);
-  task.appendChild(deleteButton);
-  task.appendChild(editButton);
+  divCheck.appendChild(editTask);
+  divCheck.appendChild(deleteTask);
+  task.appendChild(divCheck);
   taskSpan.textContent = `${newTask}`;
-  deleteButton.textContent = 'Delete';
-  editButton.textContent = 'Edit';
   uList.appendChild(task);
 
-  deleteButton.addEventListener('click', function() {
-    const task = this.parentNode
+  deleteTask.addEventListener('click', function() {
+    const task = divCheck.parentNode
     task.remove()
   });
 
-  editButton.addEventListener('click', function() {
-    const update = prompt("Edit Task");
+  editTask.addEventListener('click', function() {
+    const update = prompt("Edit task");
     if (update == null) {
       taskSpan.innerText = newTask
     } else {
@@ -45,18 +51,21 @@ taskCheck.addEventListener('click', function(){
     finished.appendChild(task)
     task.appendChild(taskCheck);
     task.appendChild(taskSpan);
-    deleteButton.remove()
-    editButton.remove()
+    taskSpan.style.setProperty('text-decoration', 'line-through');
+    taskSpan.style.setProperty('color', 'red');
+    divCheck.remove()
     } else {
       task.remove()
       uList.appendChild(task);
       task.appendChild(taskCheck);
       task.appendChild(taskSpan);
-      task.appendChild(deleteButton);
-      task.appendChild(editButton);
+      divCheck.appendChild(editTask);
+      divCheck.appendChild(deleteTask);
+      task.appendChild(divCheck);
+      taskSpan.style.setProperty('text-decoration', 'none');
+      taskSpan.style.setProperty('color', 'black');
     }
 })
-  
   
   inputField.focus();
 }
