@@ -30,27 +30,31 @@
 			</div>
 
 			<div class="task-form">
-		      <input type="text" name="item" id="item" placeholder="Enter a new task">
-		      <button class="add-task-btn">Add Task</button>
+				<form>
+			      <input type="text" class="task-desc" name="item" id="item" placeholder="Enter a new task" required>
+			      
+				  <input id="party" type="datetime-local" class="date-time" value="2024-02-25T08:30" />
+			      <button type="submit" class="add-task-btn">Add Task</button>
+			  	</form>
 		    </div>
 
 		    <div class="pending-wrap">
-		      <h2>Pending tasks</h2>
+		      <h2>Pending tasks:</h2>
 		    </div>
 
 		    <ol>
 
 		    </ol>
-		</section>
 
-		<section class="finished">
 		    <div class="finished-wrap">
-		    	<h2>Finished tasks</h2>
+		    	<h2>Finished tasks:</h2>
 		    	<ul class="finishedlist">
 		    		  
 		    	</ul>
 		    </div>
 		</section>
+
+		
 	</main>
 	<footer>
 		

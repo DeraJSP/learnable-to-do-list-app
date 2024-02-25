@@ -11,11 +11,12 @@ body {
 .todo-wrap {
 	background-color: white;
 	width: 700px;
-	height: 700px;
+	height: auto;
 	border-radius: 15px;
 	margin: 0 auto;	
 	text-align: center;
 	background-color: #f4f4f4;
+	padding: 5px 0 20px 0;
 }
 
 .fa-list-check {
@@ -45,8 +46,15 @@ h1 {
 	padding: 0 34px 0 34px;
 }
 
-h2 {
-	color: #191970;
+.pending-wrap h2 {
+	color: orange;
+	font-size: 30px;
+	text-align: left;
+	margin-left: 50px;
+}
+
+.finished-wrap h2 {
+	color: green;
 	font-size: 30px;
 	text-align: left;
 	margin-left: 50px;
@@ -55,12 +63,14 @@ h2 {
 ul,
 ol {
 	margin-left: 50px;
+	font-weight: bold;
 }
 
 li {
 	text-align: left;
 	font-weight: bold;
 	list-style-type: none;
+	padding-top: 10px;
 }
 
 .taskText {
@@ -71,15 +81,8 @@ li {
 	color: #7393B3;
 }
 
-.pending-wrap {
-}
-
 .finished-wrap {
 	height: auto;
-}
-
-.fa-pen-to-square {
-	color: #191970;
 }
 
 .delbtn {
@@ -109,9 +112,11 @@ li {
 
 input[type=checkbox] {
 	margin-right: 20px;
+	color: #191970;
 }
 
-input[type=text] {
+input[type=text],
+input[type=datetime-local] {
   width: 250px;
   height: 35px;
   border: none;
@@ -121,7 +126,8 @@ input[type=text] {
   margin-bottom: 20px;
   margin-left: 20px;
   background-color: #f4f4f4;
- 	font-weight: bold;
+ 	font-weight: 400;
+ 	font-size: 18px;
 }
 
 ::placeholder {
@@ -139,6 +145,7 @@ input[type=text] {
   width: 150px;
   height: 35px;
   border: none;
+  border-radius: 3px;
   background-color: #191970;
   color: white;
   font-weight: bold;
@@ -146,14 +153,9 @@ input[type=text] {
   font-family: poppins;
 }
 
-label {
-	font-weight: bold;
-	color: #191970;
-}
-
 .mod-task {
 	margin-left: 38px;
-	padding: 20px 0 15px 0;
+	padding: 15px 0 15px 0;
 }
 
 li {
@@ -162,4 +164,9 @@ li {
 
 li:nth-child(odd) {
 		background: white;
+}
+
+.timeWrap {
+	margin-left: 38px;
+
 }
